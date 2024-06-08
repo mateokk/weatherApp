@@ -12,9 +12,9 @@ function App() {
   const [data, setData] = useState({});
   const [location, setLocation] = useState('');
   const [error, setError] = useState(''); 
+  const API_KEY = process.env.REACT_APP_API_KEY;
 
-
-  const url = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${location}&appid=366961a8268240c5096c50cdb1bb8f27`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${location}&appid=${API_KEY}`;
 
   const searchLocation = () => {
     axios.get(url).then((response) => {
